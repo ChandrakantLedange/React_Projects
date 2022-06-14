@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export class UserItem extends Component {
+// export class UserItem extends Component {
     // https://api.github.com/users
     // state = {
     //     id:'id',
@@ -9,8 +9,25 @@ export class UserItem extends Component {
     //     html_url: "https://github.com/mojombo"
     // }
 
-  render() {
-    const {login,avatar_url,html_url} = this.props.user;
+//   render() {
+//     const {login,avatar_url,html_url} = this.props.user;
+//     return (
+//       <div className='card text-center'>
+//         <img src={avatar_url} alt="" className="round-img" style={{width:'60px'}}/>
+//         <h3>{login}</h3>
+//         <div>
+//             <a href={html_url} className='btn btn-dark btn-sm my-1'>More</a>
+//         </div>
+//       </div>
+//     )
+//   }
+// }
+
+
+//stateless function component
+
+const UserItem=(props)=>{
+    const {login,avatar_url,html_url} = props.user;
     return (
       <div className='card text-center'>
         <img src={avatar_url} alt="" className="round-img" style={{width:'60px'}}/>
@@ -20,7 +37,5 @@ export class UserItem extends Component {
         </div>
       </div>
     )
-  }
 }
-
 export default UserItem
