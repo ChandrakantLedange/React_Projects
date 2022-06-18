@@ -18,6 +18,7 @@ class Search extends Component {
         this.setState({text:''});
     }
   render() {
+    const {showClear, clearUsers} = this.props;
     return (
       <div>
         <form className="form" onSubmit={this.onSubmit}>
@@ -28,6 +29,12 @@ class Search extends Component {
             <input type='submit' value="Search" className='btn btn-dark btn-block'/>
 
         </form>
+        {showClear && 
+        
+        <button className='btn btn-light btn-block' onClick={clearUsers}>
+            Clear
+        </button>
+        }
       </div>
     )
   }
