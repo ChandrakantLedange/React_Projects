@@ -1,10 +1,17 @@
 import React, { Component } from 'react'
+import { PropTypes } from 'prop-types';
 
 class Search extends Component {
     state ={
         text:''
     }
 
+    static propTypes={
+        searchUsers:PropTypes.func.isRequired,
+        clearUsers:PropTypes.func.isRequired,
+        showClear:PropTypes.bool.isRequired,
+        setAlert:PropTypes.func.isRequired
+    }
     
     onChange = (e)=>{
         this.setState({
@@ -14,11 +21,15 @@ class Search extends Component {
     
     onSubmit=(e)=>{
         e.preventDefault();
-        this.props.searchUsers(this.state.text);
-        this.setState({text:''});
+        if(this.state.text === ''){
+            this.props.setAlert('Please enter something','light');
+        }else{
+            this.props.searchUsers(this.state.text);
+            this.setState({text:''});
+        }
     }
   render() {
-    const {showClear, clearUsers} = this.props;
+    const {showClear, clearUsers,setAlert} = this.props;
     return (
       <div>
         <form className="form" onSubmit={this.onSubmit}>
