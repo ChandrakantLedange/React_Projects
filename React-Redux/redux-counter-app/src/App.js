@@ -14,9 +14,9 @@ function App() {
        <h4>Using React and Redux</h4>
 
        <div className="quantity">
-        <button onClick={()=> dispatch(decNumber())}><span> - </span></button>
+        <button className='decrementBtn' onClick={()=> dispatch(decNumber())} disabled={myState == 0}><span> - </span></button>
         <input name="quantity" type="text" className="quantity_input" value={myState}/>
-        <button onClick={()=>dispatch(incNumber())}><span> + </span></button>
+        <button className='incrementBtn' onClick={()=>dispatch(incNumber(5))}><span> + </span></button>
        </div>
       </header>
     </div>

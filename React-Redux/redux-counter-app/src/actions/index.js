@@ -1,6 +1,7 @@
-export const incNumber = () =>{ //action creator
+export const incNumber = (num) =>{ //action creator
     return{
-        type: "INCREMENT" //action type - what to do
+        type: "INCREMENT", //action type - what to do
+        payload:num
     }
 }
 
